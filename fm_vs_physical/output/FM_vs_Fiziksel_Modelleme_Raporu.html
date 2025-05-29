@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FM ve Fiziksel Modelleme Sentezi Karşılaştırma Raporu</title>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 20px; color: #333; }
+        h1, h2, h3 { color: #2c3e50; }
+        h1 { border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        h2 { border-bottom: 1px solid #bdc3c7; padding-bottom: 5px; margin-top: 30px; }
+        img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 5px; margin: 20px 0; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        code { background: #f8f9fa; padding: 2px 5px; border-radius: 3px; font-family: monospace; }
+        pre { background: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto; }
+        blockquote { background: #f9f9f9; border-left: 5px solid #ccc; margin: 1.5em 0; padding: 1em; }
+    </style>
+</head>
+<body>
+    <h1>FM ve Fiziksel Modelleme Sentezi Karşılaştırma Raporu</h1>
+<h2>1. Giriş</h2>
+<p>Bu rapor, FM (Frekans Modülasyonu) sentezi ve fiziksel modelleme sentezi yöntemlerini karşılaştırmak amacıyla yapılan deneysel çalışmanın sonuçlarını içermektedir. Her iki yöntem de aynı temel frekansa (440 Hz - A4 notası) sahip sesler üretmek için kullanılmış ve sonuçlar çeşitli açılardan analiz edilmiştir.</p>
+<h2>2. Yöntemler</h2>
+<h3>2.1. FM Sentezi</h3>
+<p>FM sentezi, bir taşıyıcı dalganın frekansını başka bir dalga (modülatör) ile modüle ederek ses üretir. Bu çalışmada, temel FM sentezi için aşağıdaki parametreler kullanılmıştır:</p>
+<ul>
+<li>Taşıyıcı frekans: 440 Hz</li>
+<li>Modülatör frekans: 440 Hz (1:1 oranı)</li>
+<li>Modülasyon indeksi: 5.0</li>
+</ul>
+<p>FM sentezinin matematiksel formülü:</p>
+<p>Burada:
+- fc: Taşıyıcı frekans
+- fm: Modülatör frekans
+- β: Modülasyon indeksi
+- A: Genlik</p>
+<h3>2.2. Fiziksel Modelleme Sentezi</h3>
+<p>Fiziksel modelleme sentezi, gerçek enstrümanların fiziksel özelliklerini matematiksel olarak modelleyerek ses üretir. Bu çalışmada, Karplus-Strong algoritması kullanılarak bir tel modeli oluşturulmuştur:</p>
+<ul>
+<li>Tel frekansı: 440 Hz</li>
+<li>Sönümleme faktörü: 0.005</li>
+<li>Germe faktörü: 0.9</li>
+</ul>
+<p>Karplus-Strong algoritması, bir gecikme hattı ve alçak geçiren filtre kullanarak titreşen bir telin davranışını simüle eder. Algoritmanın temel adımları:</p>
+<ol>
+<li>Gecikme hattını rastgele gürültü ile başlat</li>
+<li>Gecikme hattının çıkışını ses çıkışı olarak kullan</li>
+<li>Gecikme hattının çıkışını alçak geçiren filtreden geçir</li>
+<li>Filtrelenmiş sinyali gecikme hattının girişine geri besle</li>
+</ol>
+<h2>3. Sonuçlar ve Analiz</h2>
+<h3>3.1. Dalga Formları</h3>
+<p>İki yöntemin ürettiği dalga formları arasında belirgin farklar gözlemlenmiştir:</p>
+<p><img alt="Dalga Formları" src="dalga_formlari_karsilastirma.png" /></p>
+<p>FM sentezinin dalga formu daha düzenli ve periyodik bir yapı gösterirken, fiziksel modelleme sentezinin dalga formu daha karmaşık ve doğal bir yapıya sahiptir. Bu, fiziksel modellemenin gerçek enstrümanların karmaşık titreşim davranışlarını daha iyi yansıttığını göstermektedir.</p>
+<h3>3.2. Spektral Analiz</h3>
+<p>Spektrogramlar, iki yöntemin frekans içeriğindeki farklılıkları açıkça göstermektedir:</p>
+<p><img alt="Spektrogramlar" src="spektrogramlar.png" /></p>
+<p>FM sentezi, daha belirgin ve düzenli harmonik yapıya sahiptir. Fiziksel modelleme ise daha zengin bir harmonik içerik ve zamanla değişen bir spektral yapı göstermektedir. Özellikle yüksek frekanslardaki harmoniklerin sönümlenme davranışı, fiziksel modelleme sentezinde daha doğal bir karakteristik sergilemektedir.</p>
+<h3>3.3. Harmonik İçerik</h3>
+<p>Harmonik analiz, iki yöntemin ürettiği seslerin harmonik yapısındaki farklılıkları göstermektedir:</p>
+<p><img alt="Harmonik İçerik" src="harmonik_icerik.png" /></p>
+<ul>
+<li>FM sentezi, daha kontrollü ve öngörülebilir bir harmonik dağılıma sahiptir.</li>
+<li>Fiziksel modelleme, daha doğal ve karmaşık bir harmonik dağılım göstermektedir.</li>
+<li>Fiziksel modelleme, yüksek harmoniklerde daha hızlı bir sönümlenme sergilemektedir, bu da gerçek enstrümanlara daha yakın bir davranıştır.</li>
+</ul>
+<h3>3.4. Spektral Merkezoid</h3>
+<p>Spektral merkezoid, sesin "parlaklığını" veya "ağırlık merkezini" gösteren bir ölçüdür:</p>
+<p><img alt="Spektral Merkezoid" src="spektral_merkezoid.png" /></p>
+<ul>
+<li>FM sentezinin spektral merkezoidi daha yüksek ve daha sabit bir değer göstermektedir, bu da daha parlak ve sabit bir tını anlamına gelir.</li>
+<li>Fiziksel modellemenin spektral merkezoidi zamanla azalmaktadır, bu da gerçek enstrümanlarda olduğu gibi yüksek frekansların daha hızlı sönümlendiğini gösterir.</li>
+</ul>
+<h3>3.5. Atak Karakteristiği</h3>
+<p>Atak karakteristiği, sesin başlangıç evresindeki davranışını göstermektedir:</p>
+<p><img alt="Atak Karakteristiği" src="atak_karsilastirma.png" /></p>
+<ul>
+<li>FM sentezi, daha hızlı ve keskin bir atak karakteristiği göstermektedir.</li>
+<li>Fiziksel modelleme, daha doğal ve kademeli bir atak sergilemektedir.</li>
+<li>Fiziksel modellemenin atak karakteristiği, gerçek enstrümanların davranışına daha yakındır.</li>
+</ul>
+<h3>3.6. Frekans Spektrumu</h3>
+<p>Frekans spektrumu, seslerin frekans bileşenlerini göstermektedir:</p>
+<p><img alt="Frekans Spektrumu" src="frekans_spektrumu.png" /></p>
+<ul>
+<li>FM sentezi, daha belirgin ve ayrık harmonik tepelere sahiptir.</li>
+<li>Fiziksel modelleme, daha yumuşak ve doğal bir spektral dağılım göstermektedir.</li>
+<li>Fiziksel modelleme, yüksek frekanslarda daha hızlı bir azalma sergilemektedir.</li>
+</ul>
+<h2>4. Tartışma</h2>
+<h3>4.1. Yöntemlerin Güçlü ve Zayıf Yönleri</h3>
+<table>
+<thead>
+<tr>
+<th>Özellik</th>
+<th>FM Sentez</th>
+<th>Fiziksel Modelleme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hesaplama Verimliliği</td>
+<td>Yüksek</td>
+<td>Orta-Düşük</td>
+</tr>
+<tr>
+<td>Parametre Kontrolü</td>
+<td>Basit, ancak sezgisel değil</td>
+<td>Karmaşık, ancak daha sezgisel</td>
+</tr>
+<tr>
+<td>Doğallık</td>
+<td>Düşük-Orta</td>
+<td>Yüksek</td>
+</tr>
+<tr>
+<td>Spektral Zenginlik</td>
+<td>Yüksek, ancak yapay</td>
+<td>Yüksek ve doğal</td>
+</tr>
+<tr>
+<td>Atak Karakteristiği</td>
+<td>Yapay, keskin</td>
+<td>Doğal, kademeli</td>
+</tr>
+<tr>
+<td>Uygulanabilirlik</td>
+<td>Geniş yelpazede elektronik sesler</td>
+<td>Akustik enstrüman simülasyonları</td>
+</tr>
+</tbody>
+</table>
+<h3>4.2. Hangi Durumlarda Hangi Yöntem Tercih Edilmeli?</h3>
+<p><strong>FM Sentez şu durumlarda tercih edilmelidir:</strong>
+- Elektronik, metalik veya sentetik sesler üretmek istendiğinde
+- Hesaplama kaynakları sınırlı olduğunda
+- Geniş bir spektral içerik yelpazesi gerektiğinde
+- Hızlı ve keskin atak karakteristikleri istendiğinde</p>
+<p><strong>Fiziksel Modelleme şu durumlarda tercih edilmelidir:</strong>
+- Akustik enstrümanların gerçekçi simülasyonları gerektiğinde
+- Doğal atak ve sönüm karakteristikleri istendiğinde
+- Sezgisel parametre kontrolü önemli olduğunda
+- Gerçekçi artikülasyon ve ifade özellikleri gerektiğinde</p>
+<h3>4.3. Parametre Değişimlerinin Etkileri</h3>
+<p><strong>FM Sentez:</strong>
+- Modülasyon indeksi arttıkça, harmonik içerik zenginleşir ve ses daha parlak hale gelir.
+- Taşıyıcı/modülatör frekans oranı, üretilen harmoniklerin yapısını belirler. Harmonik oranlar (1:1, 1:2, 2:1 gibi) daha müzikal sesler üretirken, harmonik olmayan oranlar daha metalik ve çan benzeri sesler üretir.</p>
+<p><strong>Fiziksel Modelleme:</strong>
+- Sönümleme faktörü, sesin süresini ve harmoniklerin sönümlenme hızını belirler. Düşük sönümleme değerleri daha uzun süren sesler üretirken, yüksek değerler daha kısa süreli sesler üretir.
+- Germe faktörü, telin esnekliğini simüle ederek harmoniklerin frekans dağılımını etkiler. Düşük germe faktörleri daha esnek bir tel davranışı göstererek harmoniklerin hafifçe uyumsuz olmasını sağlar, bu da piyano gibi enstrümanlardaki doğal uyumsuzluğu (inharmonicity) simüle eder.</p>
+<h2>5. Sonuç</h2>
+<p>Bu çalışma, FM sentezi ve fiziksel modelleme sentezi yöntemlerinin karşılaştırmalı analizini sunmaktadır. Her iki yöntemin de kendine özgü güçlü ve zayıf yönleri bulunmaktadır.</p>
+<p>FM sentezi, hesaplama verimliliği ve geniş spektral içerik üretme yeteneği ile öne çıkarken, fiziksel modelleme sentezi, doğal ses üretimi ve sezgisel parametre kontrolü açısından avantaj sağlamaktadır.</p>
+<p>Sonuç olarak, ses sentezi yöntemi seçimi, üretilmek istenen sesin türüne, kullanılabilir hesaplama kaynaklarına ve kontrol parametrelerinin sezgiselliğine bağlı olarak yapılmalıdır. İdeal bir ses sentezi sistemi, her iki yöntemin de güçlü yönlerini birleştiren hibrit bir yaklaşım kullanabilir.</p>
+<h2>6. Kaynaklar</h2>
+<ol>
+<li>Roads, C. (1996). The Computer Music Tutorial. MIT Press.</li>
+<li>Smith, J. O. (2010). Physical Audio Signal Processing. W3K Publishing.</li>
+<li>Chowning, J. M. (1973). The Synthesis of Complex Audio Spectra by Means of Frequency Modulation. Journal of the Audio Engineering Society, 21(7), 526-534.</li>
+<li>Karplus, K., &amp; Strong, A. (1983). Digital Synthesis of Plucked-String and Drum Timbres. Computer Music Journal, 7(2), 43-55.</li>
+</ol>
+<hr />
+<p>Rapor Tarihi: 29.05.2025</p>
+</body>
+</html>
+        
