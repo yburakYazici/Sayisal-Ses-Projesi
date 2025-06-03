@@ -104,34 +104,6 @@ export function SynthesizerControls() {
       description: "Akustik gitar teli - uzun süre, yüksek gerginlik",
       characteristics: ["Doğal rezonans", "Uzun sustain", "Parlak ton"],
     },
-    piano: {
-      damping: 0.008,
-      stretching: 0.85,
-      name: "🎹 Piyano",
-      description: "Piyano teli - orta süre, orta gerginlik",
-      characteristics: ["Hızlı atak", "Kontrollü sönüm", "Zengin harmonik"],
-    },
-    harp: {
-      damping: 0.002,
-      stretching: 0.98,
-      name: "🪕 Arp",
-      description: "Arp teli - çok uzun süre, çok yüksek gerginlik",
-      characteristics: ["Kristal berraklık", "Çok uzun sustain", "Hassas ton"],
-    },
-    drum: {
-      damping: 0.015,
-      stretching: 0.75,
-      name: "🥁 Davul",
-      description: "Davul derisi - kısa süre, düşük gerginlik",
-      characteristics: ["Hızlı sönüm", "Perküsif karakter", "Geniş spektrum"],
-    },
-    violin: {
-      damping: 0.004,
-      stretching: 0.92,
-      name: "🎻 Keman",
-      description: "Keman teli - uzun süre, yüksek gerginlik",
-      characteristics: ["Ekspresif ton", "Doğal vibrato", "Sıcak karakter"],
-    },
     custom: {
       damping: 0.005,
       stretching: 0.9,
@@ -1028,8 +1000,14 @@ export function SynthesizerControls() {
                                   <TooltipTrigger>
                                     <Info className="h-3 w-3 text-zinc-500" />
                                   </TooltipTrigger>
-                                  <TooltipContent>
-                                    <p>Sesin ne kadar hızlı söneceğini belirler. Düşük değerler uzun sustain sağlar.</p>
+                                  <TooltipContent className="max-w-xs">
+                                    <p className="font-medium mb-2">Sönümleme Faktörü</p>
+                                    <p>
+                                      Fiziksel modelleme sentezinde sesin zamanla ne kadar hızlı söneceğini
+                                      (azalacağını) belirleyen parametredir. Gerçek dünyada bir teli çaldığınızda sesin
+                                      yavaş yavaş kaybolması gibi, bu parametre de dijital ortamda bu doğal sönümlenme
+                                      sürecini simüle eder.
+                                    </p>
                                   </TooltipContent>
                                 </Tooltip>
                               </div>
@@ -1061,9 +1039,12 @@ export function SynthesizerControls() {
                                   <TooltipTrigger>
                                     <Info className="h-3 w-3 text-zinc-500" />
                                   </TooltipTrigger>
-                                  <TooltipContent>
+                                  <TooltipContent className="max-w-xs">
+                                    <p className="font-medium mb-2">Germe Faktörü</p>
                                     <p>
-                                      Tel gerginliğini simüle eder. Yüksek değerler daha parlak ve keskin sesler üretir.
+                                      Sanal bir telin gerginliğini simüle eden bir parametredir. Fiziksel dünyada bir
+                                      teli gerdiğinizde nasıl davranışı değişiyorsa, bu parametre de dijital ortamda
+                                      benzer bir etkiyi simüle eder.
                                     </p>
                                   </TooltipContent>
                                 </Tooltip>
